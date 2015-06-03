@@ -176,7 +176,7 @@ module RubyMarks
 
                 mark_positions = mark[:y1]-10..mark[:y1]+10
                 line += 1 unless mark_ant && mark_positions.include?(mark_ant[:y1])
-                mark[:line] = line
+                mark[:line] = line if line <= group.expected_lines
                 mark_ant = mark
               end
             end
